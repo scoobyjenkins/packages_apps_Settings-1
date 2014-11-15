@@ -26,6 +26,8 @@
 # Tavern
 -keep class com.gzr.tavern.**
 
+-keep class com.android.settings.privacyguard.*
+
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
   *** onClick*(...);
