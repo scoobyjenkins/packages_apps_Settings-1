@@ -113,9 +113,9 @@ public class StatusBar extends SettingsPreferenceFragment
 
         // header image shadows
         mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
+        int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
-        mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+        mHeaderShadow.setValue(headerShadow);
         mHeaderShadow.setOnPreferenceChangeListener(this);
     }
 
@@ -135,22 +135,18 @@ public class StatusBar extends SettingsPreferenceFragment
             Settings.System.putInt(getContentResolver(),
                  Settings.System.STATUS_BAR_CUSTOM_HEADER,
                  (Boolean) newValue ? 1 : 0);
-            return true;
       } else if (preference == mDaylightHeaderPack) {
             String value = (String) newValue;
             Settings.System.putString(getContentResolver(),
                     Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK, value);
             int valueIndex = mDaylightHeaderPack.findIndexOfValue(value);
             mDaylightHeaderPack.setSummary(mDaylightHeaderPack.getEntries()[valueIndex]);
-            return true;
       } else if (preference == mHeaderShadow) {
-            Integer headerShadow = (Integer) newValue;
-            int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
-            return true;
+         int headerShadow = (Integer) newValue;
+         Settings.System.putInt(getActivity().getContentResolver(),
+                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
       }
-        return false;
+        return true;
     }
 
     private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
