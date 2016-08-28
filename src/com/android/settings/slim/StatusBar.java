@@ -18,6 +18,7 @@ package com.android.settings.slim;
 
 import android.content.ContentResolver;
 import android.database.ContentObserver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -40,7 +41,7 @@ import com.android.internal.util.omni.PackageUtils;
 import java.util.List;
 import java.util.ArrayList;
 
-import com.android.settings.tesla.SeekBarPreference;
+import com.android.settings.chameleonos.SeekBarPreference;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -57,8 +58,6 @@ public class StatusBar extends SettingsPreferenceFragment
     private ListPreference mDaylightHeaderPack;
     private SwitchPreference mCustomHeaderImage;
     private SeekBarPreference mHeaderShadow;
-
-    private static final String TAG = "StatusBarSettings";
 
     @Override
     protected int getMetricsCategory() {
@@ -119,15 +118,6 @@ public class StatusBar extends SettingsPreferenceFragment
         mHeaderShadow.setOnPreferenceChangeListener(this);
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
     ContentResolver resolver = getActivity().getContentResolver();
@@ -147,6 +137,11 @@ public class StatusBar extends SettingsPreferenceFragment
                  Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, headerShadow);
       }
         return true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
