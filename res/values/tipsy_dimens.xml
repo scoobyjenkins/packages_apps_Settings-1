@@ -19,5 +19,4 @@
 
     <!-- Expanded desktop -->
     <dimen name="fab_line_width">2dp</dimen>
-
 </resources>
