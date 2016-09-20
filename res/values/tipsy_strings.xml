@@ -15,6 +15,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Tavern -->
+    <string name="tavern_title">Tavern</string>
+    <string name="header_category_tavern">Extra Options</string>
+
     <!-- About phone screen, Tipsy version -->
     <string name="tipsy_version_title">Tipsy version</string>
     <string name="tipsy_version_default">Unknown</string>
