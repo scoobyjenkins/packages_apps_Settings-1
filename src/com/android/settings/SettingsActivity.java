@@ -372,6 +372,7 @@ public class SettingsActivity extends SettingsDrawerActivity
             NightDisplaySettings.class.getName(),
             ManageDomainUrls.class.getName(),
             Tavern.class.getName(),
+            LightsSettings.class.getName(),
             AutomaticStorageManagerSettings.class.getName()
     };
 
