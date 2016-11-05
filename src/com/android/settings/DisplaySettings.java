@@ -45,6 +45,8 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.internal.app.NightDisplayController;
+import com.android.settings.util.Helpers;
+
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.view.RotationPolicy;
@@ -459,6 +461,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 final UiModeManager uiManager = (UiModeManager) getSystemService(
                         Context.UI_MODE_SERVICE);
                 uiManager.setNightMode(value);
+                Helpers.restartSystemUI();
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist night mode setting", e);
             }
