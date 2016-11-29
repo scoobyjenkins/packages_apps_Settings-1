@@ -19,6 +19,7 @@ package com.android.settings;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
@@ -33,6 +34,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
+import android.support.v7.preference.PreferenceScreen;
 import android.telephony.CarrierConfigManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -49,6 +51,8 @@ import com.android.settingslib.RestrictedLockUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.android.settingslib.RestrictedLockUtils.EnforcedAdmin;
 
