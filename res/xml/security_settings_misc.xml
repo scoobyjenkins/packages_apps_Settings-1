@@ -47,6 +47,7 @@
             android:title="@string/device_admin_title"
             android:persistent="false">
 
+        <!--
         <org.slim.preference.SlimListPreference
             android:key="advanced_reboot"
             android:title="@string/advanced_reboot_title"
@@ -56,6 +57,7 @@
             android:summary="%s"
             android:defaultValue="0"
             slim:slimSettingType="secure" />
+        -->
 
         <Preference android:key="manage_device_admin"
                 android:title="@string/manage_device_admin"
