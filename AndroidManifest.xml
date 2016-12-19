@@ -3058,6 +3058,10 @@
                        android:resource="@string/gesture_preference_summary" />
         </activity>
 
+        <!-- Gesture Anywhere -->
+        <activity android:name="com.gzr.tavern.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name="com.gzr.tavern.gestureanywhere.GestureAnywhereCreateGestureActivity" /> 
+
         <activity android:name="BackupSettingsActivity"
                   android:label="@string/privacy_settings_title"
                   android:icon="@drawable/ic_settings_backup"
