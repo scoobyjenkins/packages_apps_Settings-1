@@ -115,6 +115,5 @@
     <!-- Gesture Settings -->
     <!-- Summary text for double twist for camera mode  [CHAR LIMIT=160]-->
     <string name="double_twist_for_camera_mode_custom_summary">To switch in and out of selfie mode in Google Camera, double-twist when you’re in the app</string>
- </resources>
 
 </resources>
