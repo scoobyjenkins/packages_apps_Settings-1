@@ -1,15 +1,10 @@
 package com.android.settings.util;
 
-import android.app.ActivityManagerNative;
-import android.app.IActivityManager;
-
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.util.Log;
 import android.widget.Toast;
@@ -30,11 +25,11 @@ import java.util.Date;
         "NestedAssignment",
         "DynamicRegexReplaceableByCompiledPattern",
         "BreakStatement"})
-public class Helpers {
+public class DensityHelpers {
     // avoids hardcoding the tag
     private static final String TAG = Thread.currentThread().getStackTrace()[1].getClassName();
 
-    public Helpers() {
+    public DensityHelpers() {
         // dummy constructor
     }
 
@@ -304,19 +299,7 @@ public class Helpers {
     }
 
     public static void restartSystemUI() {
-        CMDProcessor.startSuCommand("pkill -f com.android.systemui");
-    }
-
-    public static void restartSystem() {
-        try {
-            final IActivityManager am = ActivityManagerNative.asInterface(ServiceManager.checkService("activity"));
-            if (am != null) {
-                am.restart();
-            }
-        }
-        catch (RemoteException e) {
-            Log.e(TAG, "Failed to restart");
-        }
+        CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
     }
 
     public static void setSystemProp(String prop, String val) {
