@@ -2159,7 +2159,7 @@
                   android:label="@string/bluetooth_permission_request"
                   android:excludeFromRecents="true"
                   android:permission="android.permission.BLUETOOTH"
-                  android:theme="@*android:style/Theme.DeviceDefault.Light.Dialog.Alert">
+                  android:theme="@*android:style/Theme.Material.DayNight.Dialog.Alert">
             <intent-filter android:priority="1">
                 <action android:name="android.bluetooth.adapter.action.REQUEST_DISCOVERABLE" />
                 <action android:name="android.bluetooth.adapter.action.REQUEST_ENABLE" />
@@ -2180,14 +2180,14 @@
                   android:excludeFromRecents="true"
                   android:exported="true"
                   android:permission="android.permission.MANAGE_USB"
-                  android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+                  android:theme="@android:style/Theme.Material.DayNight.Dialog.NoActionBar">
         </activity>
 
         <activity android:name=".RemoteBugreportActivity"
                   android:excludeFromRecents="true"
                   android:exported="true"
                   android:permission="android.permission.DUMP"
-                  android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.NoActionBar">
+                  android:theme="@android:style/Theme.Material.DayNight.Dialog.NoActionBar">
             <intent-filter>
                 <action android:name="android.settings.SHOW_REMOTE_BUGREPORT_DIALOG" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -2198,7 +2198,7 @@
                   android:label="@string/bluetooth_pairing_request"
                   android:excludeFromRecents="true"
                   android:permission="android.permission.BLUETOOTH"
-                  android:theme="@*android:style/Theme.DeviceDefault.Light.Dialog.Alert">
+                  android:theme="@*android:style/Theme.Material.DayNight.Dialog.Alert">
         </activity>
 
         <receiver android:name=".bluetooth.BluetoothPairingRequest">
@@ -2221,7 +2221,7 @@
                   android:label="@string/bluetooth_connection_permission_request"
                   android:excludeFromRecents="true"
                   android:permission="android.permission.BLUETOOTH_ADMIN"
-                  android:theme="@android:style/Theme.DeviceDefault.Light.Dialog.Alert">
+                  android:theme="@android:style/Theme.Material.DayNight.Dialog.Alert">
             <intent-filter android:priority="1">
                 <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_REQUEST" />
                 <action android:name="android.bluetooth.device.action.CONNECTION_ACCESS_CANCEL" />
@@ -2231,7 +2231,7 @@
 
         <activity android:name="ActivityPicker"
                 android:label="@string/activity_picker_label"
-                android:theme="@*android:style/Theme.DeviceDefault.Light.Dialog.Alert"
+                android:theme="@*android:style/Theme.Material.DayNight.Dialog.Alert"
                 android:finishOnCloseSystemDialogs="true">
             <intent-filter android:priority="1">
                 <action android:name="android.intent.action.PICK_ACTIVITY" />
