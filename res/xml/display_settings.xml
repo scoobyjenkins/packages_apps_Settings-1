@@ -158,8 +158,8 @@
         <com.gzr.tavern.preference.SystemSettingSwitchPreference
                 android:key="disable_suggestions"
                 android:title="@string/dashboard_suggestions_title"
-                android:summaryOn="@string/summary_dashboard_suggestions_enabled"
-                android:summaryOff="@string/summary_dashboard_suggestions_disabled"
+                android:summaryOn="@string/summary_dashboard_suggestions_disabled"
+                android:summaryOff="@string/summary_dashboard_suggestions_enabled"
                 android:defaultValue="false" />
 
         <com.gzr.tavern.preference.SystemSettingSwitchPreference
