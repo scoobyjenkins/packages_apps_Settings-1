@@ -80,6 +80,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_MBN_VERSION = "mbn_version";
     private static final String PROPERTY_MBN_VERSION = "persist.mbn.version";
+    private static final String KEY_FEATURE_LIST  = "feature-list";
 
     private static final String KEY_SLIM_OTA = "slimota";
 

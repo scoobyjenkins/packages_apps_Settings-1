@@ -22,6 +22,15 @@
         <PreferenceScreen android:key="tipsy_logo"
                           android:enabled="false"
                           android:layout="@layout/tipsy_logo_row" />
+
+        <!-- Feature-List -->
+        <PreferenceScreen
+               android:key="feature-list"
+               android:title="Features at-a-glance">
+               <intent
+	        android:action="android.intent.action.VIEW"
+	        android:data="https://raw.githubusercontent.com/TipsyOs/Feature-List/master/README.md" />
+        </PreferenceScreen>
  
         <!-- Tipsy OTA -->
         <PreferenceScreen
