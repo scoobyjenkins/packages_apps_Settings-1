@@ -146,6 +146,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private SwitchPreference mQuickUnlockScreen;
 
     private boolean mIsAdmin;
+    private boolean mIsPrimary;
 
     private Intent mTrustAgentClickIntent;
 
