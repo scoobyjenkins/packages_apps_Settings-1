@@ -63,7 +63,7 @@ import com.android.settingslib.RestrictedPreference;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slim.provider.SlimSettings;
+import slim.provider.SlimSettings;
 
 import static android.provider.Settings.Secure.CAMERA_GESTURE_DISABLED;
 import static android.provider.Settings.Secure.DOUBLE_TAP_TO_WAKE;
