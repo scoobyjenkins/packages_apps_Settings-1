@@ -48,14 +48,13 @@
         <SwitchPreference
                 android:key="volume_link_notification"
                 android:title="@string/link_volume_option_title"
-                android:persistent = "false"
-                android:defaultValue = "true" />
+                android:persistent="false"
+                android:defaultValue="true" />
 
         <!-- Also vibrate for calls -->
         <SwitchPreference
                 android:key="vibrate_when_ringing"
                 android:title="@string/vibrate_when_ringing_title" />
-
 
         <!-- Volume Steps -->
         <PreferenceScreen
