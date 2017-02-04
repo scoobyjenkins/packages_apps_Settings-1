@@ -75,7 +75,7 @@
                 android:summary="@string/camera_gesture_desc" />
 
         <SwitchPreference
-                android:key="camera_double_tap_power_gesture"
+                android:key="gesture_double_tap_power"
                 android:title="@string/camera_double_tap_power_gesture_title"
                 android:summary="@string/camera_double_tap_power_gesture_desc" />
 
@@ -193,5 +193,27 @@
                 android:defaultValue="false" />
 
      </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="category_doze_options"
+            android:title="@string/display_category_doze_options_title" >
+
+            <SwitchPreference
+                    android:key="doze"
+                    android:title="@string/doze_title"
+                    android:summary="@string/doze_summary"
+                    android:persistent="false" />
+
+            <PreferenceScreen
+                android:key="advanced_doze_options"
+                android:title="@string/doze_settings_title"
+                android:dependency="doze" >
+                <intent
+                    android:action="com.slim.settings.action.DOZE_SETTINGS"
+                    android:targetPackage="com.slim.settings"
+                    android:targetClass="com.slim.settings.activities.DozeSettingsActivity" />
+            </PreferenceScreen>
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

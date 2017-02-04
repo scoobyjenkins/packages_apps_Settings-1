@@ -27,31 +27,10 @@
         settings:preview="@drawable/gesture_fingerprint_swipe"/>
 
     <com.android.settings.gestures.GesturePreference
-        android:key="gesture_double_tap_power"
-        android:title="@string/double_tap_power_for_camera_title"
-        android:summary="@string/double_tap_power_for_camera_summary"
-        settings:animation="@raw/gesture_double_tap"
-        settings:preview="@drawable/gesture_double_tap"/>
-
-    <com.android.settings.gestures.GesturePreference
         android:key="gesture_double_twist"
         android:title="@string/double_twist_for_camera_mode_title"
         android:summary="@string/double_twist_for_camera_mode_summary"
         settings:animation="@raw/gesture_twist"
         settings:preview="@drawable/gesture_twist"/>
-
-    <com.android.settings.gestures.GesturePreference
-        android:key="gesture_double_tap_screen"
-        android:title="@string/ambient_display_title"
-        android:summary="@string/ambient_display_summary"
-        settings:animation="@raw/gesture_ambient_tap"
-        settings:preview="@drawable/gesture_ambient_tap"/>
-
-    <com.android.settings.gestures.GesturePreference
-        android:key="gesture_pick_up"
-        android:title="@string/ambient_display_pickup_title"
-        android:summary="@string/ambient_display_pickup_summary"
-        settings:animation="@raw/gesture_ambient_lift"
-        settings:preview="@drawable/gesture_ambient_lift"/>
 
 </PreferenceScreen>
