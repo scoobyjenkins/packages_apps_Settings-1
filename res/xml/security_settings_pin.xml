@@ -34,6 +34,15 @@
             android:summary="@string/unlock_quick_unlock_control_summary"
             android:persistent="false"/>
 
+        <com.gzr.tavern.preference.CustomSeekBarPreference
+            android:key="quick_unlock_pin_length"
+            android:title="@string/unlock_quick_unlock_pin_length_title"
+            android:defaultValue="4"
+            settings:max="12"
+            settings:min="4"
+            android:persistent="false"
+            android:dependency="quick_unlock_control" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
