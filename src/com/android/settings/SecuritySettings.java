@@ -63,6 +63,7 @@ import com.android.settings.search.SearchIndexableRaw;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedPreference;
 import com.android.settingslib.RestrictedSwitchPreference;
+import com.gzr.tavern.preference.CustomSeekBarPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,6 +93,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
     private static final String KEY_UNIFICATION = "unification";
     private static final String KEY_LOCKSCREEN_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
+    private static final String KEY_LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH = "quick_unlock_pin_length";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CHANGE_TRUST_AGENT_SETTINGS = 126;
@@ -117,7 +119,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = {
             KEY_SHOW_PASSWORD, KEY_TOGGLE_INSTALL_APPLICATIONS, KEY_UNIFICATION,
-            KEY_VISIBLE_PATTERN_PROFILE, KEY_LOCKSCREEN_QUICK_UNLOCK_CONTROL
+            KEY_VISIBLE_PATTERN_PROFILE, KEY_LOCKSCREEN_QUICK_UNLOCK_CONTROL,
+            KEY_LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH
     };
 
     // Only allow one trust agent on the platform.
@@ -144,6 +147,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private RestrictedSwitchPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
     private SwitchPreference mQuickUnlockScreen;
+    private CustomSeekBarPreference mQuickUnlockPINLength;
 
     private boolean mIsAdmin;
 
@@ -305,6 +309,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
         if (mQuickUnlockScreen != null) {
             mQuickUnlockScreen.setChecked(Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.LOCKSCREEN_QUICK_UNLOCK_CONTROL, 0) == 1);
+        }
+
+        // Quck Unlock PIN length
+        mQuickUnlockPINLength = (CustomSeekBarPreference) root
+            .findPreference(KEY_LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH);
+        if (mQuickUnlockPINLength != null) {
+            mQuickUnlockPINLength.setValue(Settings.Secure.getInt(getContentResolver(),
+                        Settings.Secure.LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH, 4));
         }
 
         // Append the rest of the settings
@@ -806,6 +818,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.Secure.LOCKSCREEN_QUICK_UNLOCK_CONTROL,
                     (Boolean) value ? 1 : 0);
+        } else if (KEY_LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH.equals(key)) {
+            int pin_length = ((Integer)value).intValue();
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCKSCREEN_QUICK_UNLOCK_PIN_LENGTH, pin_length);
         }
         return result;
     }

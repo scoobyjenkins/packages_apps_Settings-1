@@ -113,7 +113,8 @@
 
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN is entered\nNote: will only work for 4 digit PIN !</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN is entered\nNote: Set the PIN length below !</string>
+    <string name="unlock_quick_unlock_pin_length_title">PIN length (Beware! It should match the actual PIN used)</string>
 
 
     <!-- General -->
