@@ -165,4 +165,5 @@ public class Settings extends SettingsActivity {
     public static class SystemSettings extends SettingsActivity { /* empty */ }
     public static class LightsSettingsActivity extends SettingsActivity { /* empty */ }
     public static class TavernActivity extends SettingsActivity { /* empty */ }
+    public static class MagiskActivity extends SettingsActivity { /* empty */ }
 }
