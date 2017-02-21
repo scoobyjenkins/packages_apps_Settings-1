@@ -35,7 +35,7 @@
    <!-- Dynamic notification tint -->
    <string name="notification_tint_title">Dynamic notification title color</string>
    <string name="notification_tint_summary_off">Title color on notification will be handled by the theme</string>
-   <string name="notification_tint_summary_on">Title color on notification will be taken from app icon color</string> 
+   <string name="notification_tint_summary_on">Title color on notification will be taken from app icon color</string>
 
     <!-- Doze invert -->
     <string name="doze_notification_color_invert_title">Ambient notification inversion</string>
@@ -380,5 +380,9 @@
     <string name="night_bright_low">low brightness</string>
     <string name="night_bright_medium">medium brightness</string>
     <string name="night_bright_min">minimum brightness</string>
+
+    <!-- IME Switcher -->
+    <string name="ime_switcher_notify">Selector notification</string>
+    <string name="ime_switcher_notify_summary">Display input method selector notification</string>
 
 </resources>
