@@ -166,4 +166,5 @@ public class Settings extends SettingsActivity {
     public static class LightsSettingsActivity extends SettingsActivity { /* empty */ }
     public static class TavernActivity extends SettingsActivity { /* empty */ }
     public static class MagiskActivity extends SettingsActivity { /* empty */ }
+    public static class OmniJawsSettingsActivity extends SettingsActivity { /* empty */ }
 }

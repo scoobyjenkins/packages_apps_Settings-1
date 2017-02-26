@@ -137,6 +137,7 @@ import com.android.settingslib.drawer.SettingsDrawerActivity;
 import com.android.settingslib.drawer.Tile;
 
 import com.gzr.tavern.Tavern;
+import com.gzr.tavern.fragments.OmniJawsSettings;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -378,7 +379,8 @@ public class SettingsActivity extends SettingsDrawerActivity
             ManageDomainUrls.class.getName(),
             Tavern.class.getName(),
             LightsSettings.class.getName(),
-            AutomaticStorageManagerSettings.class.getName()
+            AutomaticStorageManagerSettings.class.getName(),
+            OmniJawsSettings.class.getName(),
     };
 
 

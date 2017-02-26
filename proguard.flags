@@ -22,6 +22,7 @@
 -keep class com.android.settings.display.*FragmentForSetupWizard
 -keep class com.android.settings.display.NightDisplaySettings
 -keep class com.android.settings.preference.*
+-keep class org.omnirom.omnijaws.**
 
 # Tavern
 -keep class com.gzr.tavern.**
