@@ -43,7 +43,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.CommandResult;
-import com.android.settings.util.DensityHelpers;
 import com.android.settings.util.AbstractAsyncSuCMDProcessor;
 
 public class Density extends SettingsPreferenceFragment implements
@@ -205,7 +204,7 @@ public class Density extends SettingsPreferenceFragment implements
     }
 
     private boolean setLcdDensity(int newDensity) {
-        DensityHelpers.getMount("rw");
+        Helpers.getMount("rw");
         if (!CMDProcessor.runSuCommand(
         "toybox sed -i 's|ro.sf.lcd_density=.*|" + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop")
         .success())
@@ -213,7 +212,7 @@ public class Density extends SettingsPreferenceFragment implements
             showRootDeniedInfoDialog();
             return false;
         }
-        DensityHelpers.getMount("ro");
+        Helpers.getMount("ro");
         return true;
     }
 
