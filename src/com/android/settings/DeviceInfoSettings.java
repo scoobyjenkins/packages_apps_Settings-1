@@ -82,6 +82,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_MBN_VERSION = "persist.mbn.version";
     private static final String KEY_FEATURE_LIST  = "feature-list";
 
+    private static final String KEY_GZROMS_APP = "gzRomsApp";
     private static final String KEY_SLIM_OTA = "slimota";
 
     long[] mHits = new long[3];
@@ -145,6 +146,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
+
+        // Only the owner should see the GZRoms App settings, if it exists
+        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
+            removePreferenceIfPackageNotInstalled(findPreference(KEY_GZROMS_APP));
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_GZROMS_APP));
+        }
 
         // Only the owner should see the Updater settings, if it exists
         if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
