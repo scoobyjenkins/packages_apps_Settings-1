@@ -83,7 +83,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_FEATURE_LIST  = "feature-list";
 
     private static final String KEY_GZROMS_APP = "gzRomsApp";
-    private static final String KEY_SLIM_OTA = "slimota";
 
     long[] mHits = new long[3];
 
@@ -152,13 +151,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             removePreferenceIfPackageNotInstalled(findPreference(KEY_GZROMS_APP));
         } else {
             getPreferenceScreen().removePreference(findPreference(KEY_GZROMS_APP));
-        }
-
-        // Only the owner should see the Updater settings, if it exists
-        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
-            removePreferenceIfPackageNotInstalled(findPreference(KEY_SLIM_OTA));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_SLIM_OTA));
         }
 
         // Remove Equipment id preference if FCC ID is not set by RIL
