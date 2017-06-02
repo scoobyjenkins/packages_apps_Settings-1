@@ -31,6 +31,17 @@
 	        android:action="android.intent.action.VIEW"
 	        android:data="https://raw.githubusercontent.com/TipsyOs/Feature-List/master/README.md" />
         </PreferenceScreen>
+
+        <!-- GZRomsApp -->
+        <PreferenceScreen
+               android:key="gzRomsApp"
+               android:title="@string/gzroms_app_title"
+               android:summary="@string/gzroms_app_summary">
+               <intent
+                       android:action="android.intent.action.MAIN"
+                       android:targetPackage="com.jerrica.GZRoms"
+                       android:targetClass="com.jerrica.GZRoms.MainActivity" />
+        </PreferenceScreen>
  
         <!-- Tipsy OTA -->
         <PreferenceScreen
