@@ -35,8 +35,7 @@
         <!-- GZRomsApp -->
         <PreferenceScreen
                android:key="gzRomsApp"
-               android:title="@string/gzroms_app_title"
-               android:summary="@string/gzroms_app_summary">
+               android:title="@string/gzroms_app_title">
                <intent
                        android:action="android.intent.action.MAIN"
                        android:targetPackage="com.jerrica.GZRoms"
