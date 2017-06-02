@@ -243,8 +243,6 @@ public class SettingsActivity extends SettingsDrawerActivity
 
     private static final String SUBSTRATUM_FRAGMENT = "com.android.settings.Substratum";
 
-    private static final String GZROMS_APP_FRAGMENT = "com.android.settings.GZRoms";
-
     private String mFragmentClass;
     private String mActivityAction;
 
@@ -1078,13 +1076,6 @@ public class SettingsActivity extends SettingsDrawerActivity
             finish();
             return null;
         }
-        if (GZROMS_APP_FRAGMENT.equals(fragmentName)) {
-            Intent gzRomsAppIntent = new Intent();
-            gzRomsAppIntent.setClassName("com.jerrica.GZRoms", "com.jerrica.GZRoms.MainActivity");
-            startActivity(gzRomsAppIntent);
-            finish();
-            return null;
-        }
         if (validate && !isValidFragment(fragmentName)) {
             throw new IllegalArgumentException("Invalid fragment for this activity: "
                     + fragmentName);
@@ -1211,16 +1202,6 @@ public class SettingsActivity extends SettingsDrawerActivity
         setTileEnabled(new ComponentName(packageName,
                         Settings.MagiskActivity.class.getName()),
                 magiskSupported, isAdmin, pm);
-
-        // GZRomsApp
-        boolean gzRomsAppSupported = false;
-        try {
-            gzRomsAppSupported = (getPackageManager().getPackageInfo("com.jerrica.GZRoms", 0).versionCode > 0);
-        } catch (PackageManager.NameNotFoundException e) {
-        }
-        setTileEnabled(new ComponentName(packageName,
-                        Settings.GZRomsAppActivity.class.getName()),
-                gzRomsAppSupported, isAdmin, pm);
 
         // Show scheduled power on and off if support
         boolean showTimerSwitch = false;
