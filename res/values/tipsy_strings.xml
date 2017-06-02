@@ -42,9 +42,6 @@
     <string name="doze_notification_color_invert_summary_off">Ambient notifications will not be inverted</string>
     <string name="doze_notification_color_invert_summary_on">Ambient notifications will be inverted</string>
 
-    <!-- Tipsy OTA -->
-    <string name="slimota_title">TipsyOTA</string>
-
     <!-- Changelog -->
     <string name="changelog_tipsy_title">Changelog</string>
     <string name="changelog_tipsy_error">Unable to load changelog</string>
