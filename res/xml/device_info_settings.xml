@@ -46,7 +46,11 @@
         <PreferenceScreen 
          	android:key="translator"
          	android:title="@string/changelog_tipsy_title"
-         	android:fragment="com.android.settings.slim.Changelog" />        
+                android:summary="ROM latest changes, know what you get!" >
+               <intent
+	        android:action="android.intent.action.VIEW"
+	        android:data="https://raw.githubusercontent.com/TipsyOs/vendor_tipsy/testing/Changelog_Tipsy.txt" />
+        </PreferenceScreen>
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
